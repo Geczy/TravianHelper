@@ -1,0 +1,77 @@
+{
+    "name": "A travian bot.",
+    "options_page": "options.html",
+    "version": "1.0",
+    "background": {
+
+        "scripts": [
+            "assets/js/settings.js"
+        ]
+    },
+    "content_scripts": [{
+
+        "js": [
+            // jQuery
+            "assets/js/jquery.js",
+            "assets/js/jquery.watch.min.js",
+
+            "lib/init.js",
+            "lib/travian.js",
+
+            "lib/calc/resourceCalc.js",
+            "lib/calc/upgradeCheck.js",
+
+            "lib/core/adventure.js",
+            "lib/core/attacks.js",
+            "lib/core/build.js",
+            "lib/core/game.js",
+            "lib/core/market.js",
+            "lib/core/messagelinker.js",
+            "lib/core/reportfilter.js",
+            "lib/core/reportResources.js",
+            "lib/core/resourceIndicator.js",
+            "lib/core/smallTweaks.js",
+            "lib/core/buildingMover.js",
+
+            "lib/crawl/crawl.js",
+
+            "lib/sidebar/farm.js",
+            "lib/sidebar/taskList.js",
+
+            "lib/util/data.js",
+            "lib/util/enums.js",
+            "lib/util/display.js",
+            "lib/util/utils.js"
+        ],
+
+        "css": [
+        ],
+
+        "matches": [
+            "http://*.travian.com/*",
+            "http://*.travian.co.uk/*",
+            "http://*.travian.us/*"
+        ]
+
+    }],
+    "icons": {
+        "16": "assets/img/icon16.png",
+        "48": "assets/img/icon48.png",
+        "128": "assets/img/icon128.png"
+    },
+    "permissions": [
+        "notifications",
+        "http://*.travian.com/*",
+        "http://*.travian.us/*",
+        "webRequest",
+        "webRequestBlocking",
+        "tabs",
+        "storage"
+    ],
+    "web_accessible_resources": [
+        "assets/audio/*",
+        "assets/img/icon128.png"
+    ],
+    "minimum_chrome_version": "17.0",
+    "manifest_version": 2
+}
